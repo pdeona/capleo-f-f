@@ -8,10 +8,7 @@ class UsersController < ApplicationController
   end
 
   def create
-    user_params = params[:user]
-    @user = User.new(name: user_params[:name], email: user_params[:email],
-                     password: user_params[:password],
-                     password_confirmation: user_params[:password_confirmation])
+    @user = User.new(user_params)
     if @user.save
       render 'show'
     else
@@ -21,5 +18,13 @@ class UsersController < ApplicationController
 
   def index
     @users = User.all
+  end
+
+  private
+
+  # only whitelist params, scary internet, etc.
+  def user_params
+    params.require(:user).permit(:name, :email,
+                                 :password, :password_confirmation)
   end
 end
