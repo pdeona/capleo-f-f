@@ -1,7 +1,0 @@
-{
-  "name": "Rainforest",
-  "private": true,
-  "dependencies": {
-    "popper.js": "^1.12.5"
-  }
-}
