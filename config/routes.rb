@@ -1,11 +1,14 @@
 Rails.application.routes.draw do
+
+  root :to => 'sessions#new'
+
   get 'login', { controller: :sessions, action: 'new' }
   post 'login', { controller: :sessions, action: 'create' }
 
   delete 'logout', { controller: :sessions, action: 'destroy' }
 
-  get 'signup_path', { controller: :users, action: 'new' }
-  post 'signup_path', {controller: :users, action: 'create'}
+  get 'signup', { controller: :users, action: 'new' }
+  post 'signup', { controller: :users, action: 'create' }
 
   resources :products do
     resources :reviews
