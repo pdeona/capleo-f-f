@@ -1,16 +1,25 @@
 class CartItemsController < ApplicationController
-  before_action :current_cart, only [:create, :destroy]
 
   def create
-    @cart.add_product(cart_item_params)
+    cart_item = CartItem.find_by(product_id: @product.id)
+    if (@cart.save && cart_item.cart_id)
+      cart_item.save
+    else
+      flash.now[:error] = "There was an issue adding this item to your cart."
+      redirect_to product_path(@product)
+    end
+  end
 
+  def update
+    self.create
+    @cart.add_product(self)
     if @cart.save
       redirect_to products_path
     else
-      flash.now[:error] = "There was an issue adding this item to your cart."
-      redirect_to @product
+      flash.now[:error] = "There was an issue with your cart."
     end
   end
+
 
   def destroy
     @cart_item.destroy

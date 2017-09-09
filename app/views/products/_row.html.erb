@@ -4,10 +4,14 @@
       <h4><%= product.name %></h4>
     </div>
     <div class="col-xs-4">
-      <%= form_for(:cart_item) do |f| %>
-        <%= f.hidden_field :product_id, value: product.id %>
-        <%= f.hidden_field :cart_id, value: @cart.id %>
-        <%= f.submit "Add to Cart", class: 'btn btn-primary', action: 'cart_item#create' %>
+      <%= form_for(cart_item, remote:true) do |f| %>
+      <%= f.hidden_field :product_id, value: product.id %>
+      <%= f.hidden_field :cart_id, value: @cart.id %>
+      <%= f.submit "Add to Cart", remote: true, class: 'btn btn-primary', action: 'cart_items#create' %>
+      <% if !(cart_item.nil?) %>
+      <%= f.submit "Remove from Cart", remote: true,
+      class: 'btn btn-primary', action: 'cart_items#destroy' %>
+      <% end %>
       <% end %>
     </div>
   </div>

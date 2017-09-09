@@ -9,3 +9,18 @@
     </section>
   </aside>
 </div>
+<div class="row">
+  <div class="col-md-4">
+  <thead class="table">
+    <tr>Shopping cart:</tr>
+  </thead>
+  <tbody class="table">
+  <% @cart = Cart.find_by user_id: @user.id %>
+  <%= @cart.cart_items.each do |item| %>
+    <tr>
+    <%= render 'products/row', remote: true, product: Product.find(item.product_id), cart_item: item  %>
+    </tr>
+  <% end %>
+  </tbody>
+  </div>
+</div>

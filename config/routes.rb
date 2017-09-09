@@ -10,9 +10,7 @@ Rails.application.routes.draw do
   get 'signup', { controller: :users, action: 'new' }
   post 'signup', { controller: :users, action: 'create' }
 
-  resources :products do
-    resources :cart_items
-  end
+  resources :products
 
   resources :users
 
