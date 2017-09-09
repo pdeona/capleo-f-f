@@ -11,9 +11,13 @@ Rails.application.routes.draw do
   post 'signup', { controller: :users, action: 'create' }
 
   resources :products do
-    resources :reviews
+    resources :cart_items
   end
 
   resources :users
+
+  resources :cart, only: [:show]
+
+  resources :cart_items, only: [:create, :update, :destroy]
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

@@ -1,0 +1,14 @@
+<div class="well">
+  <div class="row">
+    <div class="col-xs-8">
+      <h4><%= product.name %></h4>
+    </div>
+    <div class="col-xs-4">
+      <%= form_for(:cart_item) do |f| %>
+        <%= f.hidden_field :product_id, value: product.id %>
+        <%= f.hidden_field :cart_id, value: @cart.id %>
+        <%= f.submit "Add to Cart", class: 'btn btn-primary', action: 'cart_item#create' %>
+      <% end %>
+    </div>
+  </div>
+</div>

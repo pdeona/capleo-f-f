@@ -11,6 +11,7 @@ class ProductsController < ApplicationController
   # GET /products/1.json
   def show
     @review = Review.new
+    @cart_item = CartItem.find_by(product_id: product.id) ? CartItem.find_by(product_id: product.id) : CartItem.create(product_id: product.id, cart_id: @cart.id)
   end
 
   # GET /products/new
