@@ -16,8 +16,8 @@
     <% @products.each do |product| %>
       <tr>
         <%= render 'row', product: product,
-                                   cart_item:
-                                   CartItem.find_by(product_id: product.id) %>
+                          cart_item: CartItem.new(cart_id: @cart.id,
+                          product_id: product.id) %>
       </tr>
     <% end %>
   </tbody>

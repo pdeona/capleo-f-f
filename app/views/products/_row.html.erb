@@ -7,12 +7,10 @@
       <%= form_for(cart_item, remote:true) do |f| %>
       <%= f.hidden_field :product_id, value: product.id %>
       <%= f.hidden_field :cart_id, value: @cart.id %>
-      <%= f.submit "Add to Cart", remote: true, class: 'btn btn-primary', action: 'cart_items#create' %>
-      <% if !(cart_item.nil?) %>
-      <%= f.submit "Remove from Cart", remote: true,
-      class: 'btn btn-primary', action: 'cart_items#destroy' %>
       <% end %>
-      <% end %>
+      <%= button_to "Add Cart Item", cart_item: {cart_id: @cart.id, product_id: product.id}, controller: :cart_items, action: :create, method: :create  %>
+      <%=  button_to "Remove Cart Item", cart_item: {cart_id: @cart.id, product_id: product.id}, controller: :cart_items, action: :destroy,
+      method: :delete %>
     </div>
   </div>
 </div>

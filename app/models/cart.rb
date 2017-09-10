@@ -3,13 +3,11 @@ class Cart < ApplicationRecord
   has_many :cart_items
 
   def add_product(cart_item_params)
-    current_item = cart_items.find_by(product_id: cart_item_params[:product_id])
-
+    current_item = CartItem.create(cart_item_params)
     if current_item
-      current_item.save
+      @cart.cart_items << current_item
     else
-      new_item = cart_items.create(product_id: cart_item_params[:product_id], cart_id: cart_item_params[:cart_id])
+      redirect_to products_path
     end
-    new_item
   end
 end
