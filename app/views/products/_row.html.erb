@@ -9,8 +9,7 @@
       <%= f.hidden_field :cart_id, value: @cart.id %>
       <% end %>
       <%= button_to "Add Cart Item", cart_item: {cart_id: @cart.id, product_id: product.id}, controller: :cart_items, action: :create, method: :create  %>
-      <%=  button_to "Remove Cart Item", cart_item: {cart_id: @cart.id, product_id: product.id}, controller: :cart_items, action: :destroy,
-      method: :delete %>
+
     </div>
   </div>
 </div>
