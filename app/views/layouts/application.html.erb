@@ -9,6 +9,9 @@
   </head>
 
   <body>
+    <% if @current_user.nil? %>
+      <%= link_to login_path %>
+    <% end %>
     <%= render file: 'layouts/_header' %>
     <%= render 'spotify_request/search' %>
     <%= yield %>

@@ -10,4 +10,11 @@ class SpotifyRequestController < ApplicationController
     redirect_to products_path
   end
 
+  def checkout
+    @tracks = []
+    @cart.cart_items.each do |item|
+      @tracks << item.spotify_uri
+    end
+    @tracks
+  end
 end
