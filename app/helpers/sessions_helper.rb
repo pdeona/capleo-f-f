@@ -18,13 +18,15 @@ module SessionsHelper
   def current_cart
     if @current_user
       @cart = Cart.find_by(user_id: @current_user.id)
+      unless @cart
+        @cart = Cart.create(user_id: @current_user.id)
+      end
     end
-    rescue ActiveRecord::RecordNotFound
-      @cart = Cart.create(user_id: @current_user.id)
   end
 
   # determine if the user is logged in
   def logged_in?
-    !(current_user.nil?)
+    !(@current_user.nil?)
   end
+
 end

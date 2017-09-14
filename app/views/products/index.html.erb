@@ -4,25 +4,20 @@
 
 <table>
   <thead>
-    <tr>
       <th>Name</th>
       <th>Description</th>
-      <th>Price</th>
       <th colspan="3"></th>
-    </tr>
   </thead>
 
   <tbody>
     <% @products.each do |product| %>
       <tr>
         <%= render 'row', product: product,
-                          cart_item: CartItem.new(cart_id: @cart.id,
-                          product_id: product.id) %>
+                          cart_item: CartItem.new(
+                            cart_id: @cart.nil? ? @cart = Cart.create :
+                            @cart.id,
+                            product_id: product.id) %>
       </tr>
     <% end %>
   </tbody>
 </table>
-
-<br>
-
-<%= link_to 'New Product', new_product_path %>
