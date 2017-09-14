@@ -27,5 +27,6 @@
 <h4>Post a new Review:</h4>
 <%= render 'reviews/form', review: @review %>
 
+<%= link_to 'Add to Cart', 'cart_items#create' %> |
 <%= link_to 'Edit', edit_product_path(@product) %> |
 <%= link_to 'Back', products_path %>

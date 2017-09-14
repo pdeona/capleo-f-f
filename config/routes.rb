@@ -10,10 +10,17 @@ Rails.application.routes.draw do
   get 'signup', { controller: :users, action: 'new' }
   post 'signup', { controller: :users, action: 'create' }
 
-  resources :products do
-    resources :reviews
-  end
+  resources :carts
+
+  resources :products, only: :index
+
+  resources :cart_items, only: [:create, :destroy]
 
   resources :users
+
+  get 'spotify_search', to: 'spotify_request#search'
+
+  get '/auth/spotify/callback', to: 'spotify_request#checkout'
+
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

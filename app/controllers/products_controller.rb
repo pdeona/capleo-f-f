@@ -4,13 +4,14 @@ class ProductsController < ApplicationController
   # GET /products
   # GET /products.json
   def index
-    @products = Product.all
+    @products = Product.order(created_at: :desc)
   end
 
   # GET /products/1
   # GET /products/1.json
   def show
     @review = Review.new
+    @cart_item = CartItem.find_by(product_id: product.id) ? CartItem.find_by(product_id: product.id) : CartItem.create(product_id: product.id, cart_id: @cart.id)
   end
 
   # GET /products/new
@@ -70,6 +71,6 @@ class ProductsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def product_params
-      params.require(:product).permit(:name, :description, :price_in_cents)
+      params.require(:product).permit(:name, :description, :spotify_id)
     end
 end

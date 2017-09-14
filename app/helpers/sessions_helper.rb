@@ -15,8 +15,18 @@ module SessionsHelper
     @current_user ||= User.find_by id: session[:user_id]
   end
 
+  def current_cart
+    if @current_user
+      @cart = Cart.find_by(user_id: @current_user.id)
+      unless @cart
+        @cart = Cart.create(user_id: @current_user.id)
+      end
+    end
+  end
+
   # determine if the user is logged in
   def logged_in?
-    !(current_user.nil?)
+    !(@current_user.nil?)
   end
+
 end
