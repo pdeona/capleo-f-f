@@ -1,4 +1,4 @@
 class Product < ApplicationRecord
-  validates :artist, :spotify_uri, :name, presence: true
+  validates :artist, :spotify_id, :name, presence: true
   has_many :reviews
 end

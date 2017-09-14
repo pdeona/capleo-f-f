@@ -3,11 +3,9 @@ class CartItemsController < ApplicationController
   before_action :set_cart_item, only: [:create, :destroy]
 
   def create
-    @cart = Cart.find_by(user_id: @current_user.id)
-    rescue ActiveRecord::RecordNotFound
-      @cart = Cart.create(user_id: params[:session][:user_id])
-    @cart.cart_items << @cart_item
+    p @cart_item
     if @cart_item.save
+      @cart.cart_items << @cart_item
       redirect_to products_path
     end
   end
@@ -20,9 +18,9 @@ class CartItemsController < ApplicationController
   private
 
   def set_cart_item
-    @cart_item = CartItem.find_by(cart_item_params)
-    if !(@cart_item)
-      @cart_item = CartItem.create(cart_item_params)
+    @cart_item = CartItem.find_by(cart_id: @cart.id)
+    unless @cart_item
+      @cart_item = CartItem.create(cart_id: @cart.id, product_id: params[:cart_item][:product_id])
     end
   end
 

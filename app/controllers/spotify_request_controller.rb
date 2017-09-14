@@ -1,8 +1,6 @@
 class SpotifyRequestController < ApplicationController
   include SpotifyRequestHelper
 
-  before_action :log_in
-
   def search
     query = params[:search]
     @response = RSpotify::Track.search(query)
@@ -13,8 +11,18 @@ class SpotifyRequestController < ApplicationController
   def checkout
     @tracks = []
     @cart.cart_items.each do |item|
-      @tracks << item.spotify_uri
+      product = Product.find(item.product_id)
+      @tracks << product.spotify_id
     end
-    @tracks
+    spotify_user = RSpotify::User.new(request.env['omniauth.auth'])
+    p = spotify_user.create_playlist!('test1', public: true)
+    spotify_songs = []
+    @tracks.each do |track|
+      spotify_songs << RSpotify::Track.find(track)
+    end
+    # p spotify_songs
+    p.add_tracks!(spotify_songs)
+    p p.external_urls
+    redirect_to user_path(@cart.user_id)
   end
 end

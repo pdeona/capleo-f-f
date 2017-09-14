@@ -12,15 +12,15 @@ Rails.application.routes.draw do
 
   resources :carts
 
-  resources :cart_items, only: [:create, :destroy]
+  resources :products, only: :index, shallow: true
 
-  resources :products, only: :index
+  resources :cart_items, only: [:create, :destroy]
 
   resources :users
 
   get 'spotify_search', to: 'spotify_request#search'
 
-  get 'checkout', to: 'spotify_request#checkout'
+  get '/auth/spotify/callback', to: 'spotify_request#checkout'
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

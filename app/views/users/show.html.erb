@@ -22,6 +22,8 @@
       <%= render 'products/row', remote: true, product: Product.find(item.product_id), cart_item: item  %>
       </tr>
     <% end %>
+      <tr>
+        <%= render 'spotify_request/checkout' %>
   <% end %>
   </tbody>
   </div>

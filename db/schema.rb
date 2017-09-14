@@ -42,7 +42,7 @@ ActiveRecord::Schema.define(version: 20170913185512) do
     t.datetime "updated_at", null: false
     t.integer "cart_items_id"
     t.string "artist"
-    t.string "spotify_uri"
+    t.string "spotify_id"
     t.index ["cart_items_id"], name: "index_products_on_cart_items_id"
   end
 
