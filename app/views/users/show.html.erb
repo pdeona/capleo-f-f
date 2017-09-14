@@ -25,6 +25,12 @@
       <tr>
         <%= render 'spotify_request/checkout' %>
   <% end %>
+  <% @playlists = Playlist.all %>
+    <%= @playlists.each do |list| %>
+      <% if list.user_id == @current_user.id %>
+        <$= render 'playlists/user-list' %>
+      <% end %>
+    <% end %>
   </tbody>
   </div>
 </div>

@@ -1,8 +1,0 @@
-      <%=  link_to "Remove Cart Item", @cart_item, {
-                              controller: 'cart_items',
-                              action: 'destroy',
-                              method: :delete,
-                              cart_item: {
-                                    cart_id: @cart.id,
-                                    product_id: product.id
-                              } %>

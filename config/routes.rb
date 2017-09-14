@@ -12,7 +12,7 @@ Rails.application.routes.draw do
 
   resources :carts
 
-  resources :products, only: :index, shallow: true
+  resources :products, only: :index
 
   resources :cart_items, only: [:create, :destroy]
 
