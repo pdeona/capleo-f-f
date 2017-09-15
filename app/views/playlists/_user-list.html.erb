@@ -1,8 +1,8 @@
-<div class="well">
-  <div class="row">
-    <div class="col-xs-8">
-      <p><%= playlist.name %></p>
-      <p><%= link_to playlist.spotify_uri %></p>
-    </div>
-  </div>
-</div>
+<tr>
+  <% @playlists = Playlist.all %>
+  <% @playlists.each do |playlist| %>
+  <% if playlist.user_id == @current_user.id %>
+    <p><%= link_to playlist.spotify_uri, playlist.spotify_uri %></p>
+    <% end %>
+  <% end %>
+</tr>

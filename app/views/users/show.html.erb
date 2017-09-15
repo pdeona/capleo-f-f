@@ -13,24 +13,25 @@
   <div class="col-md-4">
   <thead class="table">
     <tr>Shopping cart:</tr>
+    <br>
   </thead>
   <tbody class="table">
   <% if !(@cart.nil?) %>
     <% @cart = Cart.find_by user_id: @user.id %>
-    <%= @cart.cart_items.each do |item| %>
+    <% @cart.cart_items.each do |item| %>
       <tr>
       <%= render 'products/row', remote: true, product: Product.find(item.product_id), cart_item: item  %>
       </tr>
     <% end %>
+    <% end %>
+    <br>
       <tr>
         <%= render 'spotify_request/checkout' %>
-  <% end %>
-  <% @playlists = Playlist.all %>
-    <%= @playlists.each do |list| %>
-      <% if list.user_id == @current_user.id %>
-        <$= render 'playlists/user-list' %>
-      <% end %>
-    <% end %>
+      </tr>
+      <br>
+      <br>
+      <h6>Your Playlists:</h6>
+        <%= render 'playlists/user-list' %>
   </tbody>
   </div>
 </div>

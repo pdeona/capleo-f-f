@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  get 'playlist/create'
+
   root :to => 'sessions#new'
 
   get 'login', { controller: :sessions, action: 'new' }
