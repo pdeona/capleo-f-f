@@ -10,7 +10,8 @@ class UsersController < ApplicationController
 
   def create
     @user = User.new(user_params)
-    if @user.save
+    @cart = Cart.new(user_id: @user.id)
+    if @user.save && @cart.save
       log_in @user
       render 'show'
     else

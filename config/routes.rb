@@ -12,8 +12,6 @@ Rails.application.routes.draw do
   get 'signup', { controller: :users, action: 'new' }
   post 'signup', { controller: :users, action: 'create' }
 
-  resources :carts
-
   resources :products, only: :index
 
   resources :cart_items, only: [:create, :destroy]

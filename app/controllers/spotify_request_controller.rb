@@ -2,7 +2,7 @@ class SpotifyRequestController < ApplicationController
   include SpotifyRequestHelper
   include PlaylistHelper
 
-  after_action :clean_up, only: :checkout
+  after_action :clean_up_db, only: :checkout
 
   def search
     query = params[:search]
