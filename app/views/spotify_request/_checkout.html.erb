@@ -1,1 +1,4 @@
-<%= link_to 'Sign in with Spotify to Checkout', '/auth/spotify' %>
+<%= form_tag playlist_create_path, method: 'get' do %>
+  <%= text_field_tag :list_name, params[:list_name], placeholder: 'Name your Playlist' %>
+  <%= submit_tag 'Checkout to Create your Playlist on Spotify', :name => nil %>
+<% end %>

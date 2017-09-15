@@ -8,7 +8,7 @@ module PlaylistHelper
   # then build a Playlist object in db so we can return useful info to the user
   def add_songs tracklist, playlist_object
     playlist_object.add_tracks!(tracklist)
-    playlist = Playlist.new(user_id: @current_user.id, spotify_uri: playlist_object.external_urls["spotify"])
+    playlist = Playlist.new(user_id: @current_user.id, name: playlist_object.name, spotify_uri: playlist_object.external_urls["spotify"])
     playlist.save
     redirect_to user_path(@cart.user_id)
   end

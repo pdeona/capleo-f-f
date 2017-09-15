@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
 
-  get 'playlist/create'
+
 
   root :to => 'sessions#new'
 
@@ -20,6 +20,8 @@ Rails.application.routes.draw do
 
   get 'spotify_search', to: 'spotify_request#search'
 
+  get 'playlist/create', to: 'spotify_request#playlist_create'
+  get 'auth/spotify', as: 'spotify_login'
   get '/auth/spotify/callback', to: 'spotify_request#checkout'
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html

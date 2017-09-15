@@ -11,16 +11,18 @@ class UsersController < ApplicationController
   def create
     @user = User.new(user_params)
     @cart = Cart.new(user_id: @user.id)
-    if @user.save && @cart.save
-      log_in @user
-      render 'show'
-    else
-      render 'new'
+    respond_to do |format|
+      if @user.save && @cart.save
+        log_in @user
+        render products_path, notice: 'Sign Up Successful'
+      else
+        render 'signup', error: 'Sign up failed, try again.'
+      end
     end
   end
 
   def index
-    @users = User.all
+    # @users = User.all
   end
 
   private

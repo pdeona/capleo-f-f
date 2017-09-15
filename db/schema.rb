@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170913185512) do
+ActiveRecord::Schema.define(version: 20170915164831) do
 
   create_table "cart_items", force: :cascade do |t|
     t.integer "cart_id"
@@ -33,6 +33,7 @@ ActiveRecord::Schema.define(version: 20170913185512) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "spotify_uri"
+    t.string "name"
     t.index ["user_id"], name: "index_playlists_on_user_id"
   end
 

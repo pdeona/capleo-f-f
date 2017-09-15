@@ -9,11 +9,19 @@
   </head>
 
   <body>
-    <% if @current_user.nil? %>
-      <%= link_to login_path %>
-    <% end %>
     <%= render file: 'layouts/_header' %>
     <%= render 'spotify_request/search' %>
-    <%= yield %>
+    <% if flash[:error].present? %>
+      <p class="flash-error"><%= flash[:error] %></p>
+    <% end %>
+    <% if flash[:notice].present? %>
+      <p class="flash-notice"><%= flash[:notice] %></p>
+    <% end %>
+    <% if @current_user.nil? %>
+      <%  flash[:error] = 'You must be signed in to do that' %>
+      <%= render 'sessions/login' %>
+    <% else %>
+      <%= yield %>
+    <% end %>
   </body>
 </html>
