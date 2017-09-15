@@ -11,7 +11,7 @@ module Rainforest
     # Initialize configuration defaults for originally generated Rails version.
     config.load_defaults 5.1
 
-    RSpotify::authenticate('3b7f09ba4fdf4d0aa23cb0c22c51b0b4', '04670734b62e40b793de0fbf65cee33f')
+    RSpotify::authenticate(CLIENT ID, CLIENT SECRET)
     # Settings in config/environments/* take precedence over those specified here.
     # Application configuration should go into files in config/initializers
     # -- all .rb files in that directory are automatically loaded.
