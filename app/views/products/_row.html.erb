@@ -1,10 +1,19 @@
 <div class="well">
   <div class="row">
+<<<<<<< HEAD
     <div class="col-xs-8">
       <p><%= product.name %></p>
       <p><%= product.artist %></p>
       <%= link_to "Add Cart Item", cart_items_path(product: product.id), method: :post  %>
       <% if (cart_item = CartItem.find_by product_id: product.id) %>
+=======
+    <ul class="product-row product">
+      <li><%= image_tag product.image, size:'128x128' %></li>
+      <li>Song name:<br><%= product.name %></li>
+      <li>Artist:<br><%= product.artist %></li>
+      <li><%= link_to "Add Cart Item", cart_items_path(product: product.id), method: :post  %></li>
+      <li><% if (cart_item = CartItem.find_by product_id: product.id) %>
+>>>>>>> styling-branch
         <%=  link_to "Remove Cart Item", cart_item_path(cart_item), method: :delete %>
       <% end %>
     </div>

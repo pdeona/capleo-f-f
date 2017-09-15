@@ -2,3 +2,25 @@
   Place all the styles related to the matching controller here.
   They will automatically be included in application.css.
 */
+.well {
+  width: 100%;
+  background: lightblue;
+  color: gray;
+  border-radius: 0.5em;
+  margin: 0;
+  padding: 0;
+}
+
+.product {
+  display: flex;
+  flex-wrap: row nowrap;
+  justify-content: space-between;
+}
+
+
+.product > li {
+  padding: 0 1.5em;
+  text-anchor: center;
+  align-self: center;
+  padding: auto;
+}

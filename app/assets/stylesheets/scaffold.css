@@ -1,3 +1,132 @@
+<<<<<<< HEAD
+=======
+/* CSS RESET */
+
+* {
+  box-sizing: border-box;
+}
+
+li {
+  list-style-type: none;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+a:visited {
+  text-decoration: none;
+}
+
+/* APP STYLING */
+
+img {
+  padding: 0.5em;
+  clear: right;
+}
+
+* {
+  font-family: helvetica;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+.search-field {
+  padding-left: 0.5em;
+  border: 1px solid black;
+  width: 90%;
+  border-top-left-radius: .5em;
+  border-bottom-left-radius: .5em;
+  border-right: none;
+  height: 2em;
+}
+
+.sign-in-form-div {
+  justify-content: center;
+  display: flex;
+  flex-flow: column nowrap;
+  align-content: center;
+}
+
+.form-control {
+  padding-left: 0.5em;
+  width: 60vw;
+}
+
+.signin-btn {
+  border: 0 transparent;
+  width: 100%;
+  display: block;
+  background: orange;
+  border-radius: 0.5em;
+  padding-top: 0.5em;
+  margin-top: 0.5em;
+  justify-content: center;
+}
+
+.search-btn {
+  background-color: orange;
+  border-top-right-radius: 0.5em;
+  border-bottom-right-radius: 0.5em;
+  border-left: none;
+  height: 2em;
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+  float:right;
+  display: inline;
+  width: 10%;
+  border: 0.5px black solid;
+}
+
+table, thead {
+  align-self: center;
+  display: inline;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  flex-flow: column nowrap;
+}
+
+h1 {
+  align-self: center;
+}
+
+div {
+  align-self: center;
+  justify-content: center;
+  align-content: center;
+  clear: left;
+  padding: 1.5em;
+}
+
+
+.nav {
+  border-radius: 0.5em;
+  align-self: center;
+  background: orange;
+  display: flex;
+  padding: 0.5em;
+  flex-flow: row nowrap;
+  justify-content: space-around;
+  align-self: center;
+}
+
+.nav > li {
+  align-self: center;
+  padding: 0.5em;
+  margin: 0 1em;
+}
+
+.nav:visited {
+  text-decoration: none;
+}
+
+>>>>>>> styling-branch
 body {
   background-color: #fff;
   color: #333;
@@ -77,4 +206,38 @@ div.actions {
 
 label {
   display: block;
+}
+
+.checkout-field {
+  padding-left: 0.5em;
+  border: 1px solid black;
+  width: 72%;
+  border-top-left-radius: .5em;
+  border-bottom-left-radius: .5em;
+  border-right: none;
+  height: 2em;
+}
+
+.checkout-btn {
+  background-color: orange;
+  border-top-right-radius: 0.5em;
+  border-bottom-right-radius: 0.5em;
+  border-left: none;
+  height: 2em;
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+  float:right;
+  display: inline;
+  width: 28%;
+  border: 0.5px black solid;
+}
+
+.flash-danger {
+  align-self: center;
+  color: red;
+}
+
+.flash-notice {
+  align-self: center;
+  color: green;
 }
