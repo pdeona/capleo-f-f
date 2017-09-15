@@ -20,6 +20,7 @@
 
 # ignore secret files
 
+
 /config/initializers/*.rb
 /config/*.rb
 
