@@ -33,12 +33,36 @@ a:hover {
 }
 
 .search-field {
+  padding-left: 0.5em;
   border: 1px solid black;
   width: 90%;
   border-top-left-radius: .5em;
   border-bottom-left-radius: .5em;
   border-right: none;
   height: 2em;
+}
+
+.sign-in-form-div {
+  justify-content: center;
+  display: flex;
+  flex-flow: column nowrap;
+  align-content: center;
+}
+
+.form-control {
+  padding-left: 0.5em;
+  width: 60vw;
+}
+
+.signin-btn {
+  border: 0 transparent;
+  width: 100%;
+  display: block;
+  background: orange;
+  border-radius: 0.5em;
+  padding-top: 0.5em;
+  margin-top: 0.5em;
+  justify-content: center;
 }
 
 .search-btn {
@@ -83,7 +107,6 @@ div {
   border-radius: 0.5em;
   align-self: center;
   background: orange;
-  color: gray;
   display: flex;
   padding: 0.5em;
   flex-flow: row nowrap;
@@ -171,6 +194,7 @@ label {
 }
 
 .checkout-field {
+  padding-left: 0.5em;
   border: 1px solid black;
   width: 72%;
   border-top-left-radius: .5em;

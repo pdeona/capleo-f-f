@@ -1,5 +1,5 @@
 <%= form_tag playlist_create_path, method: 'get' do %>
-  <%= text_field_tag :list_name, params[:list_name], placeholder: ' Name your Playlist', class: 'checkout-field' %>
+  <%= text_field_tag :list_name, params[:list_name], placeholder: 'Name your Playlist', class: 'checkout-field' %>
   <%= submit_tag 'Create', :name => nil,
                   class: 'checkout-btn',
                   data: {
