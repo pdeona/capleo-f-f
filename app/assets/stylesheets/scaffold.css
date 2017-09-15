@@ -19,21 +19,76 @@ a:visited {
 
 /* APP STYLING */
 
+img {
+  padding: 0.5em;
+  clear: right;
+}
+
+* {
+  font-family: helvetica;
+}
+
 a:hover {
   text-decoration: underline;
 }
 
-table, thead {
+.search-field {
+  border: 1px solid black;
+  width: 90%;
+  border-top-left-radius: .5em;
+  border-bottom-left-radius: .5em;
+  border-right: none;
+  height: 2em;
+}
+
+.search-btn {
+  background-color: orange;
+  border-top-right-radius: 0.5em;
+  border-bottom-right-radius: 0.5em;
+  border-left: none;
+  height: 2em;
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+  float:right;
   display: inline;
+  width: 10%;
+  border: 0.5px black solid;
+}
+
+table, thead {
+  align-self: center;
+  display: inline;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  flex-flow: column nowrap;
+}
+
+h1 {
+  align-self: center;
+}
+
+div {
+  align-self: center;
+  justify-content: center;
+  align-content: center;
+  clear: left;
+  padding: 1.5em;
 }
 
 
 .nav {
+  border-radius: 0.5em;
+  align-self: center;
   background: orange;
   color: gray;
-  display: inline-flex;
+  display: flex;
   padding: 0.5em;
+  flex-flow: row nowrap;
   justify-content: space-around;
+  align-self: center;
 }
 
 .nav > li {
@@ -113,4 +168,37 @@ div.actions {
 
 label {
   display: block;
+}
+
+.checkout-field {
+  border: 1px solid black;
+  width: 72%;
+  border-top-left-radius: .5em;
+  border-bottom-left-radius: .5em;
+  border-right: none;
+  height: 2em;
+}
+
+.checkout-btn {
+  background-color: orange;
+  border-top-right-radius: 0.5em;
+  border-bottom-right-radius: 0.5em;
+  border-left: none;
+  height: 2em;
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+  float:right;
+  display: inline;
+  width: 28%;
+  border: 0.5px black solid;
+}
+
+.flash-danger {
+  align-self: center;
+  color: red;
+}
+
+.flash-notice {
+  align-self: center;
+  color: green;
 }

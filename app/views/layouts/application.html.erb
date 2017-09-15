@@ -11,11 +11,11 @@
   <body>
     <%= render file: 'layouts/_header' %>
     <%= render 'spotify_request/search' %>
-    <% if flash[:error].present? %>
-      <p class="flash-error"><%= flash.now[:error] %></p>
+    <% if flash[:danger].present? %>
+      <p class="flash-danger"><%= flash[:danger] %></p>
     <% end %>
     <% if flash[:notice].present? %>
-      <p class="flash-notice"><%= flash.now[:notice] %></p>
+      <p class="flash-notice"><%= flash[:notice] %></p>
     <% end %>
     <%= yield %>
   </body>

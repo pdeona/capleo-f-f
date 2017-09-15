@@ -3,10 +3,15 @@ class CartItemsController < ApplicationController
   before_action :set_cart_item, only: [:destroy]
 
   def create
-    @cart_item = CartItem.new(product_id: params[:product], cart_id: @cart.id)
-    if @cart_item.save
-      @cart.cart_items << @cart_item
-      redirect_to products_path
+    if @current_user
+      @cart_item = CartItem.new(product_id: params[:product], cart_id: @cart.id)
+      if @cart_item.save
+        @cart.cart_items << @cart_item
+        redirect_to products_path
+      end
+    else
+      flash[:danger] = 'You must be logged in to do that'
+      redirect_to login_path
     end
   end
 
