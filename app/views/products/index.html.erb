@@ -1,21 +1,18 @@
 <p id="notice"><%= notice %></p>
 
-<h4>Song Library:</h4>
+<h1>Products</h1>
+
 <table>
   <thead>
-    <tr>
-      <th class='colspan'></th>
-      <th class='colspan'></th>
-      <th class='colspan'></th>
       <th>Name</th>
-      <th class='colspan'></th>
-      <th>Artist</th>
-    </tr>
+      <th>Description</th>
+      <th colspan="3"></th>
   </thead>
+
   <tbody>
     <% @products.each do |product| %>
       <tr>
-        <td><%= render 'row', product: product %></td>
+        <%= render 'row', product: product %>
       </tr>
     <% end %>
   </tbody>

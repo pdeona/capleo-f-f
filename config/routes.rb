@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
 
-  root to: 'sessions#new'
+
+
+  root :to => 'sessions#new'
 
   get 'login', { controller: :sessions, action: 'new' }
   post 'login', { controller: :sessions, action: 'create' }
