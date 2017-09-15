@@ -9,15 +9,12 @@ class UsersController < ApplicationController
   end
 
   def create
-    @user = User.new(user_params)
-    @cart = Cart.new(user_id: @user.id)
-    respond_to do |format|
-      if @user.save && @cart.save
-        log_in @user
-        render products_path, notice: 'Sign Up Successful'
-      else
-        render 'signup', error: 'Sign up failed, try again.'
-      end
+    user = User.new(user_params)
+    cart = Cart.create(user_id: user.id)
+    if user.save
+      redirect_to products_path, flash.now[:notice] = 'Sign Up Successful'
+    else
+      render 'new', flash.now[:error] = 'Sign up failed, try again.'
     end
   end
 

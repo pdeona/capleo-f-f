@@ -1,4 +1,7 @@
 <%= form_tag playlist_create_path, method: 'get' do %>
   <%= text_field_tag :list_name, params[:list_name], placeholder: 'Name your Playlist' %>
-  <%= submit_tag 'Checkout to Create your Playlist on Spotify', :name => nil %>
+  <%= submit_tag 'Checkout to Create your Playlist on Spotify', :name => nil,
+                  data: {
+                    confirm: 'Are you sure you want to create this playlist on Spotify?'
+                    } %>
 <% end %>

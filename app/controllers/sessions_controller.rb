@@ -6,18 +6,17 @@ class SessionsController < ApplicationController
   def create
     user = User.find_by(email: session_email)
     if user && user.authenticate(session_pw)
-      flash[:notice] = "Log in successful"
       log_in user
-      redirect_to user_path(user)
+      redirect_to user_path(user), :notice => "Log in successful"
     else
-      flash[:error] = "Invalid email/password combination"
+      flash.now[:error] = "Invalid email/password combination"
       render 'new'
     end
   end
 
   def destroy
     log_out
-    redirect_to root_path
+    redirect_to root_path, :notice => 'Logged out successfully.'
   end
 
   private

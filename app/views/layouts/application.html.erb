@@ -12,16 +12,11 @@
     <%= render file: 'layouts/_header' %>
     <%= render 'spotify_request/search' %>
     <% if flash[:error].present? %>
-      <p class="flash-error"><%= flash[:error] %></p>
+      <p class="flash-error"><%= flash.now[:error] %></p>
     <% end %>
     <% if flash[:notice].present? %>
-      <p class="flash-notice"><%= flash[:notice] %></p>
+      <p class="flash-notice"><%= flash.now[:notice] %></p>
     <% end %>
-    <% if @current_user.nil? %>
-      <%  flash[:error] = 'You must be signed in to do that' %>
-      <%= render 'sessions/login' %>
-    <% else %>
-      <%= yield %>
-    <% end %>
+    <%= yield %>
   </body>
 </html>

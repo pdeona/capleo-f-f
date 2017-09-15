@@ -27,6 +27,14 @@ class SpotifyRequestController < ApplicationController
     session[:list_name] = nil
     tracklist = build_tracklist tracks
     # p spotify_songs
-    add_songs tracklist, playlist_object
+    unless tracklist.empty?
+      add_songs tracklist, playlist_object
+    end
+    respond_to do |format|
+      format.html {
+        redirect_to user_path(@current_user),
+        notice: 'Playlist ' + Playlist.last.name + ' successfully created.'
+      }
+    end
   end
 end
