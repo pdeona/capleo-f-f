@@ -12,6 +12,8 @@
 /db/*.sqlite3-journal
 
 # Ignore all logfiles and tempfiles.
+/config/initializers/omniauth.rb
+/config/application.rb
 /log/*
 /tmp/*
 !/log/.keep
