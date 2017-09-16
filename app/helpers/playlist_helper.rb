@@ -2,7 +2,7 @@ module PlaylistHelper
   # send playlist creation request
   def make_playlist user, list_name
     playlist = user.create_playlist!(list_name, public: true)
-    db_playlist = Playlist.new(user_id: @current_user.id, name: playlist.name, spotify_uri: playlist.external_urls["spotify"])
+    db_playlist = Playlist.new(user_id: @current_user.id, name: playlist.name, spotify_uri: playlist.external_urls["spotify"], embed: playlist.uri)
     if db_playlist.save
       playlist
     end
