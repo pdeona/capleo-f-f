@@ -25,4 +25,4 @@ production:
   <<: *default
   database: rainforest2_production
   username: rainforest2
-  password: <%= ENV['RAINFOREST2_DATABASE_PASSWORD'] %>
+  password: rainforest-admin
