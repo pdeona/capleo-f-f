@@ -7,16 +7,16 @@ class CartItemsController < ApplicationController
       @cart_item = CartItem.new(product_id: params[:product], cart_id: @cart.id)
       if @cart_item.save
         @cart.cart_items << @cart_item
-        redirect_to products_path
+        render products_path, notice: 'Item added successfully'
       end
     else
-      redirect_to login_path, danger: 'You must be logged in to do that'
+      render login_path, danger: 'You must be logged in to do that'
     end
   end
 
   def destroy
     @cart_item.destroy
-    redirect_to user_path(@current_user)
+    render user_path(@current_user)
   end
 
   private
