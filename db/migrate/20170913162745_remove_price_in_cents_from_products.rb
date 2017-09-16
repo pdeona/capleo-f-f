@@ -3,5 +3,6 @@ class RemovePriceInCentsFromProducts < ActiveRecord::Migration[5.1]
     remove_column :products, :price_in_cents
     add_column :products, :artist, :string
     add_column :products, :spotify_id, :string
+    add_column :products, :image, :string
   end
 end
