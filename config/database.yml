@@ -28,5 +28,4 @@ production:
   pool: 5
   username: rainforest2
   password: rainforest-admin
-  host: localhost
   port: 5466
