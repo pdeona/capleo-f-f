@@ -6,9 +6,10 @@
       <% end %>
       <li>Song name:<br><%= product.name %></li>
       <li>Artist:<br><%= product.artist %></li>
-      <li><%= link_to "Add Cart Item", cart_items_path(product: product.id), method: :post  %>
+      <li><%= link_to "Add Cart Item", cart_items_path(product: product.id), remote: true, method: :post  %>
       <br><% if (cart_item = CartItem.find_by product_id: product.id) %>
-        <%=  link_to "Remove Cart Item", cart_item_path(cart_item), method: :delete %>
+        <%=  link_to "Remove Cart Item", cart_item_path(cart_item),
+        remote: true, method: :delete %>
         <% end %></li>
       </ul>
     </div>
