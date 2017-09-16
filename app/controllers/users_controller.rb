@@ -6,6 +6,7 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find(params[:id])
+    @cart = Cart.find_by user_id: @user.id
   end
 
   def create

@@ -7,20 +7,23 @@
   background: lightblue;
   color: gray;
   border-radius: 0.5em;
-  margin: 0;
+  margin: 0.5em;
   padding: 0;
-}
 
-.product {
   display: flex;
   flex-wrap: row nowrap;
   justify-content: space-between;
 }
 
+.product-row {
+  display: flex;
+  justify-content: space-between;
+}
 
-.product > li {
+
+.product-row > li {
+  width: 14.5em;
   padding: 0 1.5em;
   text-anchor: center;
   align-self: center;
-  padding: auto;
 }

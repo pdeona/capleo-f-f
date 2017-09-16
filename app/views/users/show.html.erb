@@ -2,36 +2,28 @@
 <div class="row">
   <aside class="col-md-4">
     <section class="user-info">
-        <%= gravatar_for @user %>
+      <%= gravatar_for @user %>
       <h1>
         <%= @user.name %>
       </h1>
     </section>
   </aside>
 </div>
-<div class="row">
-  <div class="col-md-4">
-  <thead class="table">
-    <tr>Songs in your current playlist:</tr>
-    <br>
-  </thead>
-  <tbody class="table">
-  <% if !(@cart.nil?) %>
-    <% @cart = Cart.find_by user_id: @user.id %>
-    <% @cart.cart_items.each do |item| %>
-      <tr>
-      <%= render 'products/row', remote: true, product: Product.find(item.product_id), cart_item: item  %>
-      </tr>
-    <% end %>
-    <% end %>
-    <br>
-      <tr>
-        <%= render 'spotify_request/checkout' %>
-      </tr>
-      <br>
-      <br>
-      <h4>Your Playlists:</h4>
-        <%= render 'playlists/user-list' %>
-  </tbody>
-  </div>
+ <% if !(@cart.nil?) %>
+ <p>Songs in your current playlist:</p>
+ <% @cart.cart_items.each do |item| %>
+  <% product = Product.find item.product_id %>
+  <% debug product %>
+    <tr>
+      <%= render 'products/row', product: product %>
+    </tr>
+<% end %>
+<% end %>
+<div class='checkout-well'>
+  <%= render 'spotify_request/checkout' %>
+</div>
+<div class="playlist-well">
+  <h4>Your Playlists:</h4>
+  <%= render 'playlists/user-list' %>
+</div>
 </div>
