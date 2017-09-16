@@ -11,8 +11,7 @@ class UsersController < ApplicationController
 
   def create
     user = User.new(user_params)
-    cart = Cart.create(user_id: user.id)
-    if user.save
+    if user.save && cart = Cart.create(user_id: user.id)
       redirect_to products_path, notice: 'Sign Up Successful'
     else
       render 'new', error: 'Sign up failed, try again.'
