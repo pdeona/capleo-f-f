@@ -10,10 +10,9 @@
   </aside>
 </div>
  <% if !(@cart.nil?) %>
- <p>Songs in your current playlist:</p>
+ <p id='current-user-cart'>Songs in your current playlist:</p>
  <% @cart.cart_items.each do |item| %>
   <% product = Product.find item.product_id %>
-  <% debug product %>
     <tr>
       <%= render 'products/row', product: product %>
     </tr>
@@ -22,7 +21,7 @@
 <div class='checkout-well'>
   <%= render 'spotify_request/checkout' %>
 </div>
-<div class="playlist-well">
+<div id="playlist-well">
   <h4>Your Playlists:</h4>
   <%= render 'playlists/user-list' %>
 </div>
