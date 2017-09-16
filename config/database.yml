@@ -23,9 +23,6 @@ test:
 
 production:
   adapter: postgresql
-  encoding: unicode
+  encoding: utf8
   database: nu-mixif_development
   pool: 5
-  username: rainforest2
-  password: rainforest-admin
-  port: 5466
