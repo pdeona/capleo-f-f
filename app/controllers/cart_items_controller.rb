@@ -10,8 +10,7 @@ class CartItemsController < ApplicationController
         redirect_to products_path
       end
     else
-      flash[:danger] = 'You must be logged in to do that'
-      redirect_to login_path
+      redirect_to login_path, danger: 'You must be logged in to do that'
     end
   end
 
