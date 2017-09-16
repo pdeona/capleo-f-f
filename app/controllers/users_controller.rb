@@ -13,9 +13,9 @@ class UsersController < ApplicationController
     user = User.new(user_params)
     cart = Cart.create(user_id: user.id)
     if user.save
-      redirect_to products_path, flash.now[:notice] = 'Sign Up Successful'
+      redirect_to products_path, notice: 'Sign Up Successful'
     else
-      render 'new', flash.now[:error] = 'Sign up failed, try again.'
+      render 'new', error: 'Sign up failed, try again.'
     end
   end
 
