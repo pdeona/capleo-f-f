@@ -22,7 +22,5 @@ test:
   database: db/test.sqlite3
 
 production:
-  adapter: postgresql
   encoding: utf8
-  database: nu-mixif_development
   pool: 5
