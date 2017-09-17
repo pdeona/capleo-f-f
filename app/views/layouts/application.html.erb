@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Rainforest</title>
+    <title>Nu-miXif</title>
     <%= csrf_meta_tags %>
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
@@ -10,6 +10,9 @@
 
   <body>
     <%= render file: 'layouts/_header' %>
+    <div id='logo'>
+      <h2>nu-miXif</h2>
+    </div>
     <%= render 'spotify_request/search' %>
     <% if flash[:danger].present? %>
       <p class="flash-danger"><%= flash.now[:danger] %></p>

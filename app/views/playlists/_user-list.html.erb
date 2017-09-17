@@ -2,7 +2,9 @@
   <% @playlists = Playlist.all %>
   <% @playlists.each do |playlist| %>
   <% if playlist.user_id == @current_user.id %>
-    <p><%= link_to playlist.name, playlist.spotify_uri %></p>
-    <% end %>
+  <p><%= link_to playlist.name, playlist.spotify_uri %></p>
+
+  <iframe src="https://open.spotify.com/embed?uri=<%= playlist.embed %>" width="300" height="80" frameborder="0" allowtransparency="true"></iframe>
+  <% end %>
   <% end %>
 </tr>
