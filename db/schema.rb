@@ -10,11 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-<<<<<<< HEAD
-ActiveRecord::Schema.define(version: 20170915204911) do
-=======
 ActiveRecord::Schema.define(version: 20170916181802) do
->>>>>>> d2d8879a35726404bfaeda93d246eddeca008077
 
   create_table "cart_items", force: :cascade do |t|
     t.integer "cart_id"
@@ -49,7 +45,6 @@ ActiveRecord::Schema.define(version: 20170916181802) do
     t.integer "cart_items_id"
     t.string "artist"
     t.string "spotify_id"
-    t.string "image"
     t.index ["cart_items_id"], name: "index_products_on_cart_items_id"
   end
 
