@@ -31,10 +31,12 @@ module SpotifyRequestHelper
 
   # delete unused products from db to avoid clutter
   def clean_up_db
+    items = CartItem.all
+    cartproducts = items.map { |item| (Product.find item.product_id).id}
     products = Product.all
     products.each do |product|
-      if product.cart_items_id == nil
-        # product.destroy
+      unless cartproducts.include?(product.id)
+        product.destroy
       end
     end
   end
