@@ -6,7 +6,7 @@ class ProductTest < ActiveSupport::TestCase
 
 	def setup
 		@product = Product.new(name: "string", cart_items_id: "integer",
-										 cart_items_id: 'integer', spotify_id: 'string')
+										 spotify_id: 'string')
 	end
 	# A PRODUCT HAS A BUNCH OF ATTRIBUTES THAT CAN BE FOUND IN THE SCHEME.  WRITE TESTS TO REJECT INVALID ENTRIES AND ACCEPT VALID ONES.
 
@@ -24,7 +24,7 @@ class ProductTest < ActiveSupport::TestCase
 		@product.name = ""
 	end
 
-	test "product name is a string" do
+	test "product image is a string" do
 		@product.image = ""
 	end
 
@@ -50,5 +50,9 @@ class ProductTest < ActiveSupport::TestCase
 
 	test "product goes into cart" do
 		@cart << @product
+	end
+
+	test "product can be deleted from cart" do
+		@cart.remove(@product)
 	end
 end
