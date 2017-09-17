@@ -34,7 +34,7 @@ module SpotifyRequestHelper
     products = Product.all
     products.each do |product|
       if product.cart_items_id == nil
-        product.destroy
+        # product.destroy
       end
     end
   end
