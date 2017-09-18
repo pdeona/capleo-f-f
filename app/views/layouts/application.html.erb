@@ -2,7 +2,7 @@
 <html>
   <head>
     <%= csrf_meta_tags %>
-
+    <title>Nu-Mixif - Your songs, your playlists, your music</title>
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
@@ -10,7 +10,6 @@
   <body>
 
     <%= render file: 'layouts/_header' %>
-    <%= image_tag "mixif.png", size: '200x200', class: 'logo' %>
 
     <%= render 'spotify_request/search' %>
     <% if flash[:danger].present? %>

@@ -2,7 +2,7 @@
   <div class="container">
     <nav>
       <ul class="nav navbar-nav navbar-right" >
-        
+        <li><%= image_tag "mixif.png", size: '100x100', class: 'logo' %></li>
         <li><%= link_to "Song Library", products_path %></li>
         <% if logged_in? %>
           <li><%= link_to "My Playlists", user_path(@current_user, anchor: 'playlist-well') %></li>

@@ -9,22 +9,22 @@
     </section>
   </aside>
 </div>
- <% if !(@cart.nil?) %>
- <p id='current-user-cart'>Songs in your current playlist:</p>
- <% @cart.cart_items.each do |item| %>
-  <% product = Product.find item.product_id %>
-    <tr>
-      <%= render 'products/row', product: product %>
-    </tr>
+<div class='product-well'>
+<% if !(@cart.nil?) %>
+  <p id='current-user-cart'>Songs in your current playlist:</p>
+  <% @cart.cart_items.each do |item| %>
+    <% product = Product.find item.product_id %>
+    <%= render 'products/row', product: product %>
+  <% end %>
 <% end %>
-<% end %>
+</div>
 <div class='checkout-well'>
   <%= render 'spotify_request/checkout' %>
 </div>
-<div id="playlist-well">
-  <h4>Your Playlists:</h4>
-  <%= render 'playlists/user-list' %>
-</div>
+  <div id="playlist-well">
+    <h4>Your Playlists:</h4>
+    <%= render 'playlists/user-list' %>
+  </div>
 </div>
 
 

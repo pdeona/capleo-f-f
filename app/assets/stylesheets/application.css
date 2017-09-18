@@ -17,8 +17,8 @@
  */
 
  body {
-
- 	background-color: #E6E6E6;
+  color: white;
+ 	background-color: orange;
   font-family: 'Roboto', sans-serif;
  }
 
@@ -31,8 +31,3 @@
 	display: block;
 	margin: 0 auto;
 }
-
-.nav{
-
-}
-
