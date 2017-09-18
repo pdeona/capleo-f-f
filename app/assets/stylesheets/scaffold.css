@@ -258,6 +258,8 @@ label {
   border-bottom-left-radius: .5em;
   border-right: none;
   height: 2em;
+  font-size: 1rem;
+  line-height: 1.25;
 }
 
 .checkout-btn {
@@ -273,6 +275,8 @@ label {
   width: 28%;
   border: 1px black solid;
   color: white;
+  font-size: 1rem;
+  line-height: 1.25;
 }
 
 .flash-danger {
