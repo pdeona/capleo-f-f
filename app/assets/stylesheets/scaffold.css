@@ -62,8 +62,8 @@ a:hover {
   background-image: none;
   -webkit-background-clip: padding-box;
   background-clip: padding-box;
-  border: 1px solid rgba(0,0,0,.15);
   border-radius: .25rem;
+  border: 0;
   -webkit-transition: border-color ease-in-out .15s,-webkit-box-shadow ease-in-out .15s;
   transition: border-color ease-in-out .15s,-webkit-box-shadow ease-in-out .15s;
   -o-transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
@@ -107,7 +107,6 @@ a:hover {
   -ms-user-select: none;
   user-select: none;
   background-image: none;
-  border: 1px solid transparent;
   border-radius: 4px;
   background-color: gray;
   border-color: transparent;
@@ -117,7 +116,7 @@ a:hover {
 
 .search-field {
   padding-left: 0.5em;
-  border: 1px solid black;
+  border: 0;
   width: 90%;
   border-top-left-radius: .5em;
   border-bottom-left-radius: .5em;
@@ -140,7 +139,7 @@ a:hover {
   float: right;
   display: inline;
   width: 10%;
-  border: 0.5px black solid;
+  border: 0;
   color: white;
 }
 
@@ -252,7 +251,7 @@ label {
 
 .checkout-field {
   padding-left: 0.5em;
-  border: 1px solid black;
+  border: 0;
   width: 72%;
   border-top-left-radius: .5em;
   border-bottom-left-radius: .5em;
@@ -273,7 +272,7 @@ label {
   float:right;
   display: inline;
   width: 28%;
-  border: 1px black solid;
+  border: 0;
   color: white;
   font-size: 1rem;
   line-height: 1.25;
