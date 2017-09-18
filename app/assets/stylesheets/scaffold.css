@@ -171,7 +171,7 @@ div {
   font-color: white;
   display: flex;
   padding: 0.5em;
-  flex-flow: row wrap;
+  flex-flow: row nowrap;
   justify-content: space-around;
   align-self: center;
   margin: 0 auto;
