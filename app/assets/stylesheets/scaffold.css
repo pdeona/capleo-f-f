@@ -42,16 +42,6 @@ a:hover {
   justify-content: center;
 }
 
-.search-field {
-  padding-left: 0.5em;
-  border: 1px solid black;
-  width: 90%;
-  border-top-left-radius: .5em;
-  border-bottom-left-radius: .5em;
-  border-right: none;
-  height: 2em;
-}
-
 .sign-in-form-div {
   justify-content: center;
   display: flex;
@@ -62,6 +52,30 @@ a:hover {
 .form-control {
   padding-left: 0.5em;
   width: 60vw;
+  display: block;
+  width: 100%;
+  padding: .5rem .75rem;
+  font-size: 1rem;
+  line-height: 1.25;
+  color: #464a4c;
+  background-color: #fff;
+  background-image: none;
+  -webkit-background-clip: padding-box;
+  background-clip: padding-box;
+  border: 1px solid rgba(0,0,0,.15);
+  border-radius: .25rem;
+  -webkit-transition: border-color ease-in-out .15s,-webkit-box-shadow ease-in-out .15s;
+  transition: border-color ease-in-out .15s,-webkit-box-shadow ease-in-out .15s;
+  -o-transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
+  transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
+  transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s,-webkit-box-shadow ease-in-out .15s;
+}
+
+.sign-in-form-div {
+  display: flex;
+  width: 40vw;
+  justify-content: center;
+  flex-flow: column nowrap;
 }
 
 .signin-btn {
@@ -69,12 +83,48 @@ a:hover {
   width: 40%;
   margin: 0 auto;
   display: block;
-  background: gray;
   border-radius: 0.5em;
   padding-top: 0.5em;
   margin-top: 0.5em;
   justify-content: center;
   color: white;
+  background: gray;
+}
+
+.btn-primary {
+  padding: 6px 12px;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.42857143;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: middle;
+  -ms-touch-action: manipulation;
+  touch-action: manipulation;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  background-image: none;
+  border: 1px solid transparent;
+  border-radius: 4px;
+  background-color: gray;
+  border-color: transparent;
+  color: white;
+  margin: 1em auto;
+}
+
+.search-field {
+  padding-left: 0.5em;
+  border: 1px solid black;
+  width: 90%;
+  border-top-left-radius: .5em;
+  border-bottom-left-radius: .5em;
+  border-right: none;
+  height: 2em;
+  font-size: 1rem;
+  line-height: 1.25;
 }
 
 .search-btn {
@@ -83,9 +133,11 @@ a:hover {
   border-bottom-right-radius: 0.5em;
   border-left: none;
   height: 2em;
+  font-size: 1rem;
+  line-height: 1.25;
   border-top-left-radius: 0;
   border-bottom-left-radius: 0;
-  float:right;
+  float: right;
   display: inline;
   width: 10%;
   border: 0.5px black solid;
@@ -119,10 +171,14 @@ div {
   font-color: white;
   display: flex;
   padding: 0.5em;
-  flex-flow: row nowrap;
+  flex-flow: row wrap;
   justify-content: space-around;
   align-self: center;
   margin: 0 auto;
+}
+
+.nav > img {
+  display: block;
 }
 
 .nav > li {
