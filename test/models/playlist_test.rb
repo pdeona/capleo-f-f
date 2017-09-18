@@ -26,7 +26,7 @@ class PlaylistTest < ActiveSupport::TestCase
 	end
 
 	test "each playlist has embed string" do
-		@playlist.each.assert_includes(		https://open.spotify.com/track/*
+		@playlist.each.assert_includes("https://open.spotify.com/track/\A"
 		)
 	end
 
@@ -62,7 +62,10 @@ class PlaylistTest < ActiveSupport::TestCase
 	# Per Spotify's terms of use, this feature is necessary - design recources at link in below link
 	test "playlist shows image of album of each item" do
 		@playlist.include_album_image
-		@playlist.include_album_image = *.png
+		@playlist.album_image = []
+		@playlist.album_image[0].is_a(Integer)
+		@playlist.album_image[1].is_a("String")
+		@playlist.album_image[2].is_a(Integer)
 	end
 
 	test "playlist shows song title of each item as string" do
