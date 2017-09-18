@@ -6,12 +6,15 @@
       <% end %>
       <li>Song name:<br><%= product.name %></li>
       <li>Artist:<br><%= product.artist %></li>
-      <li class='cart-buttons-li'><%= link_to "Add Cart Item", cart_items_path(product: product.id),
-      class: 'btn-primary cart-button', method: :post  %>
-      <% if (cart_item = CartItem.find_by cart_id: @cart.id) %>
-      <%=  link_to "Remove Cart Item", cart_item_path(cart_item),
-      class: 'btn-primary cart-button', method: :delete %>
-        <% end %></li>
+      <% if @current_user %>
+        <li class='cart-buttons-li'><%= link_to "Add Cart Item", cart_items_path(product: product.id),
+        class: 'btn-primary cart-button', method: :post  %>
+        <% if (@current_user) && (cart_item = CartItem.find_by product_id: product.id) %>
+          <%=  link_to "Remove Cart Item", cart_item_path(cart_item),
+          class: 'btn-primary cart-button', method: :delete %>
+          <% end %>
+        </li>
+        <% end %>
       </ul>
     </div>
   </div>

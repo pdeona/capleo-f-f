@@ -304,3 +304,7 @@ label {
 .cart-button {
   margin: 0.5em auto;
 }
+
+.turbolinks-progress-bar {
+  background-color: lightblue;
+}
