@@ -1,4 +1,4 @@
-/* CSS RESET */
+/*/*/*/* CSS RESET */
 
 * {
   box-sizing: border-box;
@@ -107,7 +107,7 @@ div {
 
 .nav {
   width: 80vw;
-  border-radius: 0.5em;
+  border-radius: 20em;
   background: orange;
   display: flex;
   padding: 0.5em;
@@ -133,8 +133,8 @@ body {
 }
 
 body, p, ol, ul, td {
-  font-family: verdana, arial, helvetica, sans-serif;
-  font-size: 13px;
+  font-family: Georgia, serif;
+  font-size: 15 px;
   line-height: 18px;
 }
 
@@ -237,3 +237,4 @@ label {
 .playlist-well {
   width: 100%;
 }
+*/*/*/

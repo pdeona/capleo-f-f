@@ -18,5 +18,20 @@
 
  body {
  	background-color: #E6E6E6;
+font-family: Georgia, serif;
  }
+
+ h1{
+ 	font-size: 20px;
+ 	padding-top: 2em;
+ }
+
+.logo{
+	display: block;
+	margin: 0 auto;
+}
+
+.nav{
+
+}
 
