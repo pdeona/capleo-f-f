@@ -122,6 +122,7 @@ div {
   flex-flow: row nowrap;
   justify-content: space-around;
   align-self: center;
+  margin: 0 auto;
 }
 
 .nav > li {
