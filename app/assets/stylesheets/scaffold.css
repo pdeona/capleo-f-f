@@ -71,6 +71,7 @@ a:hover {
   transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s,-webkit-box-shadow ease-in-out .15s;
 }
 
+
 .sign-in-form-div {
   display: flex;
   width: 40vw;
@@ -113,6 +114,14 @@ a:hover {
   color: white;
   margin: 1em auto;
 }
+
+.cart-buttons-li {
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+  align-content: center;
+}
+
 
 .search-field {
   padding-left: 0.5em;
@@ -290,4 +299,8 @@ label {
 
 .playlist-well {
   width: 100%;
+}
+
+.cart-button {
+  margin: 0.5em auto;
 }
