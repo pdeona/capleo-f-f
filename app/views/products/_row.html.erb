@@ -7,7 +7,7 @@
       <li>Song name:<br><%= product.name %></li>
       <li>Artist:<br><%= product.artist %></li>
       <li><%= link_to "Add Cart Item", cart_items_path(product: product.id), method: :post  %>
-      <br><% if (cart_item = CartItem.find_by product_id: product.id) %>
+      <br><% if (cart_item = CartItem.find_by cart_id: @cart.id) %>
         <%=  link_to "Remove Cart Item", cart_item_path(cart_item),
         method: :delete %>
         <% end %></li>
