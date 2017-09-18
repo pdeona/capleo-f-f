@@ -10,7 +10,7 @@
   <body>
 
     <%= render file: 'layouts/_header' %>
-                            <img src="mixif.png" width="200px" height="200px" class="logo" >
+    <%= image_tag "mixif.png", size: '200x200', class: 'logo' %>
 
     <%= render 'spotify_request/search' %>
     <% if flash[:danger].present? %>
