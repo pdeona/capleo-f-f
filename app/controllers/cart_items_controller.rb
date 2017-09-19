@@ -7,7 +7,7 @@ class CartItemsController < ApplicationController
       @cart_item = CartItem.new(product_id: params[:product], cart_id: @cart.id)
       if @cart_item.save
         @cart.cart_items << @cart_item
-        redirect_to products_path(anchor: 'product-well'), notice: 'Item added successfully'
+        redirect_to products_path(anchor: 'flash-section'), notice: 'Item added successfully'
       end
     else
       redirect_to login_path, danger: 'You must be logged in to do that'

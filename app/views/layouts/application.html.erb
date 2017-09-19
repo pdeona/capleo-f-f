@@ -8,17 +8,20 @@
   </head>
 
   <body>
-
     <%= render file: 'layouts/_header' %>
     <div class='search-div'>
       <%= render 'spotify_request/search' %>
     </div>
     <% if flash[:danger].present? %>
-      <p class="flash-danger"><%= flash.now[:danger] %></p>
-    <% end %>
-    <% if flash[:notice].present? %>
-      <p class="flash-notice"><%= flash.now[:notice] %></p>
-    <% end %>
+      <section id='flash-section'>
+        <p class="flash-danger"><%= flash.now[:danger] %></p>
+      </section>
+      <% end %>
+      <% if flash[:notice].present? %>
+      <section id='flash-section'>
+        <p class="flash-notice"><%= flash.now[:notice] %></p>
+      </section>
+      <% end %>
     <%= yield %>
 
   </body>
