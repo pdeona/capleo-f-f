@@ -4,7 +4,7 @@ module SpotifyRequestHelper
   def parse_response
     if @response
       @response.each do |track|
-        Product.create(name: track.name, artist: track.artists[0].name, spotify_id: track.id, image: track.album.images[0]['url'])
+        Product.create_with(name: track.name, artist: track.artists[0].name, image: track.album.images[0]['url']).find_or_create_by(spotify_id: track.id)
       end
     end
   end

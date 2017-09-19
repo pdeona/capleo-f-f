@@ -32,8 +32,10 @@ gem 'jbuilder', '~> 2.5'
 # gem 'redis', '~> 3.0'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
+# use this cool gem for spotify api calls
 gem 'rspotify'
-gem 'httparty'
+# use this gem to paginate massive db query results
+gem 'will_paginate'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development

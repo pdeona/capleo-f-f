@@ -3,7 +3,7 @@
     <nav>
       <ul class="nav navbar-nav navbar-right" >
         <li><%= image_tag "mixif.png", size: '100x100', class: 'logo' %></li>
-        <li><%= link_to "Song Library", products_path %></li>
+        <li><%= link_to "Song Library", products_path, session[:search] = nil %></li>
         <% if logged_in? %>
           <li><%= link_to "My Playlists", user_path(@current_user, anchor: 'playlist-well') %></li>
           <li><%= link_to "Current Songs in Cart", user_path(@current_user, anchor: 'current-user-cart') %></li>

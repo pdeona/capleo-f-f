@@ -4,14 +4,19 @@ class ProductsController < ApplicationController
   # GET /products
   # GET /products.json
   def index
-    @products = Product.order(created_at: :desc)
+    if session[:search]
+      possible_products_one = Product.order(name: :asc).where("name like ?", "%#{session[:search]}%").paginate(page: params[:page])
+      possible_products_two = Product.order(name: :asc).where("artist like ?", "%#{session[:search]}%").paginate(page: params[:page])
+      @products = possible_products_one.size >= possible_products_two.size ? possible_products_one : possible_products_two
+    else
+      @products = Product.order(created_at: :desc).paginate(page: params[:page])
+    end
   end
 
   # GET /products/1
   # GET /products/1.json
   def show
-    @review = Review.new
-    @cart_item = CartItem.find_by(product_id: product.id) ? CartItem.find_by(product_id: product.id) : CartItem.create(product_id: product.id, cart_id: @cart.id)
+    @cart_item = CartItem.create_with(cart_id: @cart.id).find_or_create_by(product_id: @product.id)
   end
 
   # GET /products/new

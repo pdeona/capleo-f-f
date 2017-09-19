@@ -2,6 +2,7 @@
   Place all the styles related to the matching controller here.
   They will automatically be included in application.css.
 */
+
 .well {
   width: auto;
   background: lightblue;
@@ -18,11 +19,40 @@
 .product-row {
   display: flex;
   justify-content: space-between;
+  overflow: auto;
 }
 
 
 .product-row > li {
-  width: 14.5em;
-  padding: 0 1.5em;
+  width: 10em;
+  padding: 0 1em;
   align-self: center;
+}
+
+.pagination > a {
+  padding: 0.5em;
+}
+
+em {
+  padding: 0.5em;
+}
+
+a.previous_page, a.next_page {
+  padding: 0.5em 1em;
+  border-radius: 1em;
+  background-color: gray;
+  color: white;
+}
+
+span.previous_page.disabled {
+  background: gray;
+  color: lightgray;
+  padding: 0.5em 1em;
+  border-radius: 1em;
+}
+
+@media screen and (max-width: 400px) {
+  .product-row {
+    flex-flow: row wrap;
+  }
 }

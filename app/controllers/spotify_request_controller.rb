@@ -2,13 +2,14 @@ class SpotifyRequestController < ApplicationController
   include SpotifyRequestHelper
   include PlaylistHelper
 
-  after_action :clean_up_db, only: :checkout
+  # after_action :clean_up_db, only: :checkout
 
   def search
     if !(@current_user.nil?)
       query = params[:search]
       @response = RSpotify::Track.search(query)
       parse_response
+      session[:search] = query
       redirect_to products_path
     else
       redirect_to login_path

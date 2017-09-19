@@ -10,8 +10,9 @@
   <body>
 
     <%= render file: 'layouts/_header' %>
-
-    <%= render 'spotify_request/search' %>
+    <div class='search-div'>
+      <%= render 'spotify_request/search' %>
+    </div>
     <% if flash[:danger].present? %>
       <p class="flash-danger"><%= flash.now[:danger] %></p>
     <% end %>
