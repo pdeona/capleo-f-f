@@ -1,12 +1,8 @@
 <h1>Song Library:</h1>
 
-<table>
-  <tbody>
-    <% @products.each do |product| %>
-      <tr>
-        <%= render 'row', product: product %>
-      </tr>
-    <% end %>
-    <%= will_paginate @products %>
-  </tbody>
-</table>
+<div id='product-well'>
+  <% @products.each do |product| %>
+      <%= render 'row', product: product %>
+  <% end %>
+  <%= will_paginate @products %>
+</div>

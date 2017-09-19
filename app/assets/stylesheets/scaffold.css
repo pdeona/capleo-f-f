@@ -184,6 +184,7 @@ div {
 
 .nav {
   width: 80vw;
+  max-width: 960px;
   border-radius: 20em;
   background: gray;
   font-color: white;
@@ -268,6 +269,10 @@ label {
   display: block;
 }
 
+#current-user-cart {
+  align-self: center;
+}
+
 .checkout-field {
   padding-left: 0.5em;
   border: 0;
@@ -317,4 +322,8 @@ label {
 
 .turbolinks-progress-bar {
   background-color: lightblue;
+}
+
+.user-info {
+  display: flex;
 }

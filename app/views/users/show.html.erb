@@ -9,15 +9,13 @@
     </section>
   </aside>
 </div>
-<div class='product-well'>
-<% unless @cart.nil? %>
+<% if @cart %>
   <p id='current-user-cart'>Songs in your current playlist:</p>
-  <% @cart.cart_items.each do |item| %>
-    <% product = Product.find item.product_id %>
-    <%= render 'products/row', product: product %>
-  <% end %>
+    <% @cart.cart_items.each do |item| %>
+        <% product = Product.find item.product_id %>
+        <%= render 'products/row', product: product %>
+    <% end %>
 <% end %>
-</div>
 <div class='checkout-well'>
   <%= render 'spotify_request/checkout' %>
 </div>
