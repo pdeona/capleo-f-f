@@ -6,4 +6,3 @@ $(function() {
     source: $('#_spotify_search_name').data('autocomplete-source')
   });
 });
-

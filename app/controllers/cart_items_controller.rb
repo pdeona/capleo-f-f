@@ -11,6 +11,7 @@ class CartItemsController < ApplicationController
             @cart.cart_items << @cart_item
             redirect_to products_path, notice: 'Item added successfully'
           }
+        end
       end
     else
       redirect_to login_path, danger: 'You must be logged in to do that'

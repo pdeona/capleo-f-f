@@ -11,7 +11,12 @@ class SpotifyRequestController < ApplicationController
       @response = RSpotify::Track.search(query)
       parse_response
       respond_to do |format|
-      redirect_to products_path
+        format.html {
+          redirect_to products_path
+        }
+        format.json {
+          render 'cart_items/create'
+        }
     else
       redirect_to login_path
     end
