@@ -10,6 +10,9 @@ ruby '2.4.1'
 # Add bcrypt for secure password storage
 gem 'bcrypt'
 
+# add jquery ui gem
+gem 'jquery-ui-rails'
+
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.1.3'
 # Use Puma as the app server

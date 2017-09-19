@@ -1,4 +1,7 @@
 class Product < ApplicationRecord
   validates :artist, :spotify_id, :name, presence: true
-  # has_many :reviews, dependent: :destroy
+
+  def name=(name)
+    self.name = Product.find_or_create_by(name: name) if name.present?
+  end
 end

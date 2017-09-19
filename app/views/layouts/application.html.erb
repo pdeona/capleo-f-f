@@ -12,11 +12,10 @@
     <%= render file: 'layouts/_header' %>
 
     <%= render 'spotify_request/search' %>
-    <% if flash[:danger].present? %>
-      <p class="flash-danger"><%= flash.now[:danger] %></p>
-    <% end %>
-    <% if flash[:notice].present? %>
-      <p class="flash-notice"><%= flash.now[:notice] %></p>
+    <% if flash.any? { |msg| !(msg.nil?)} %>
+      <% flash.each do |name, msg| %>
+        <%= content_tag :div, msg, :id => "flash_#{name}" %>
+      <% end %>
     <% end %>
     <%= yield %>
 

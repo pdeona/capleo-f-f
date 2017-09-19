@@ -4,7 +4,7 @@ module PlaylistHelper
     playlist = user.create_playlist!(list_name, public: true)
     db_playlist = Playlist.new(user_id: @current_user.id, name: playlist.name, spotify_uri: playlist.external_urls["spotify"], embed: playlist.uri)
     if db_playlist.save
-      playlist
+      {playlist_object: playlist, db_object: db_playlist}
     end
   end
 

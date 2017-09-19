@@ -4,7 +4,10 @@ module SpotifyRequestHelper
   def parse_response
     if @response
       @response.each do |track|
-        Product.create(name: track.name, artist: track.artists[0].name, spotify_id: track.id, image: track.album.images[0]['url'])
+        Product.create_with(name: track.name,
+                            artist: track.artists[0].name,
+                            image: track.album.images[0]['url'])
+               .find_or_create_by(spotify_id: track.id)
       end
     end
   end
@@ -30,15 +33,16 @@ module SpotifyRequestHelper
   end
 
   # delete unused products from db to avoid clutter
-  def clean_up_db
-    items = CartItem.all
-    cartproducts = items.map { |item| item.product_id }
-    products = Product.all
-    products.each do |product|
-      unless cartproducts.include?(product.id)
-        product.destroy
-      end
-    end
-  end
+  #  if necessary - just uncomment the call in spotify_request_controller#checkout
+  # def clean_up_db
+  #   items = CartItem.all
+  #   cartproducts = items.map { |item| item.product_id }
+  #   products = Product.all
+  #   products.each do |product|
+  #     unless cartproducts.include?(product.id)
+  #       product.destroy
+  #     end
+  #   end
+  # end
 
 end

@@ -4,7 +4,15 @@ class ProductsController < ApplicationController
   # GET /products
   # GET /products.json
   def index
-    @products = Product.order(created_at: :desc)
+    @products = Product.order(:name).where("name like ?", "%#{params[:term]}%")
+    respond_to do |format|
+      format.html {
+        render 'products/index'
+      }
+      format.json {
+        @products.map(&:name)
+      }
+    end
   end
 
   # GET /products/1
@@ -71,6 +79,6 @@ class ProductsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def product_params
-      params.require(:product).permit(:name, :description, :spotify_id)
+      params.require(:product).permit(:name, :spotify_id, :artist, :image)
     end
 end

@@ -2,13 +2,15 @@ class SpotifyRequestController < ApplicationController
   include SpotifyRequestHelper
   include PlaylistHelper
 
-  after_action :clean_up_db, only: :checkout
+  #  un-comment this line if you want to remove un-carted db Products upon user checkout
+  # after_action :clean_up_db, only: :checkout
 
   def search
-    if !(@current_user.nil?)
+    unless @current_user.nil?
       query = params[:search]
       @response = RSpotify::Track.search(query)
       parse_response
+      respond_to do |format|
       redirect_to products_path
     else
       redirect_to login_path
@@ -27,12 +29,12 @@ class SpotifyRequestController < ApplicationController
     session[:list_name] = nil
     tracklist = build_tracklist tracks
     unless tracklist.empty?
-      add_songs tracklist, playlist
+      add_songs tracklist, playlist[:playlist_object]
     end
     respond_to do |format|
       format.html {
         redirect_to user_path(@current_user),
-        notice: 'Playlist ' + Playlist.last.name + ' successfully created.'
+        notice: 'Playlist ' + playlist[:db_object].name + ' successfully created.'
       }
     end
   end

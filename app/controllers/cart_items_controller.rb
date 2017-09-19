@@ -6,8 +6,11 @@ class CartItemsController < ApplicationController
     if @current_user
       @cart_item = CartItem.new(product_id: params[:product], cart_id: @cart.id)
       if @cart_item.save
-        @cart.cart_items << @cart_item
-        redirect_to products_path, notice: 'Item added successfully'
+        respond_to do |format|
+          format.html {
+            @cart.cart_items << @cart_item
+            redirect_to products_path, notice: 'Item added successfully'
+          }
       end
     else
       redirect_to login_path, danger: 'You must be logged in to do that'
