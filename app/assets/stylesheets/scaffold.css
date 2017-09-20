@@ -200,8 +200,14 @@ div {
   margin: 0 1em;
 }
 
-.nav:visited {
+.nav > a:visited, a:hover {
   text-decoration: none;
+  color: white;
+}
+
+.nav > li:hover {
+  background-color: purple;
+  border-radius: 0.33em;
 }
 
 body, p, ol, ul, td {

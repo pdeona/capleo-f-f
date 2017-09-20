@@ -6,10 +6,9 @@ class SpotifyRequestController < ApplicationController
 
   def search
     unless @current_user.nil?
-      query = params[:search]
+      query = session[:search] = params[:search]
       @response = RSpotify::Track.search(query)
       parse_response @response
-      session[:search] = query
       redirect_to products_path
     else
       flash[:danger] = 'Must be logged in to do that.'

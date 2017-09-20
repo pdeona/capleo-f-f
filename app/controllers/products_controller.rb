@@ -6,11 +6,8 @@ class ProductsController < ApplicationController
   # GET /products
   # GET /products.json
   def index
-    if session[:search]
-      @products = search_helper
-    else
-      @products = Product.order(created_at: :desc).paginate(page: params[:page])
-    end
+    query = session[:search]
+    @products = search_helper query
   end
 
   # GET /products/1
