@@ -8,20 +8,21 @@
   </head>
 
   <body>
+    <%= image_tag "mixif.png", size: '400x100', class: 'logo' %>
     <%= render file: 'layouts/_header' %>
     <div class='search-div'>
-      <%= render 'spotify_request/search' %>
+      <%= render 'spotify_request/search' -%>
     </div>
-    <% if flash[:danger].present? %>
+    <% if flash[:danger].present? -%>
       <section id='flash-section'>
-        <p class="flash-danger"><%= flash.now[:danger] %></p>
+        <p class="flash-danger"><%= flash.now[:danger] -%></p>
       </section>
-      <% end %>
-      <% if flash[:notice].present? %>
+      <% end -%>
+      <% if flash[:notice].present? -%>
       <section id='flash-section'>
-        <p class="flash-notice"><%= flash.now[:notice] %></p>
+        <p class="flash-notice"><%= flash.now[:notice] -%></p>
       </section>
-      <% end %>
+      <% end -%>
     <%= yield %>
 
   </body>

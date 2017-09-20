@@ -1,13 +1,13 @@
 class ProductsController < ApplicationController
   before_action :set_product, only: [:show, :edit, :update, :destroy]
 
+  include ProductsHelper
+
   # GET /products
   # GET /products.json
   def index
     if session[:search]
-      possible_products_one = Product.order(name: :asc).where("name like ?", "%#{session[:search]}%").paginate(page: params[:page])
-      possible_products_two = Product.order(name: :asc).where("artist like ?", "%#{session[:search]}%").paginate(page: params[:page])
-      @products = possible_products_one.size >= possible_products_two.size ? possible_products_one : possible_products_two
+      @products = search_helper
     else
       @products = Product.order(created_at: :desc).paginate(page: params[:page])
     end

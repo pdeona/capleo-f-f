@@ -4,7 +4,7 @@
       <% unless product.image.nil? %>
         <li><%= image_tag product.image, size:'128x128' %></li>
       <% end %>
-      <li>Song name:<br><%= product.name %></li>
+      <li>Song name:<br><%= word_wrap(product.name, line_width: 24) %></li>
       <li>Artist:<br><%= product.artist %></li>
         <li class='cart-buttons-li'><%= link_to "Add Cart Item", cart_items_path(product: product.id),
         class: 'btn-primary cart-button', method: :post  %>

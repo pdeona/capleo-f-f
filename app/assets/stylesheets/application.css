@@ -14,18 +14,27 @@
  *= require_self
  */
 
- body {
-  color: white;
- 	background-color: cornflowerblue;
+ /* CSS RESET */
+
+* {
+  box-sizing: border-box;
+}
+
+li {
+  list-style-type: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+a:visited {
+  text-decoration: none;
+}
+
+body {
+  color: black;
+  background-color: turquoise;
   font-family: 'Roboto', sans-serif;
- }
-
- h1{
- 	font-size: 20px;
- 	padding-top: 2em;
- }
-
-.logo{
-	display: block;
-	margin: 0 auto;
+  overflow: wrap;
 }

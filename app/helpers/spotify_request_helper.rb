@@ -11,10 +11,8 @@ module SpotifyRequestHelper
 
   # grab our song list and give our user a fresh cart to refill
   def cart_cleanup cart
-    tracks = []
+    tracks = cart.item_grab
     cart.cart_items.each do |item|
-      product = Product.find(item.product_id)
-      tracks << product.spotify_id
       item.destroy
     end
     tracks

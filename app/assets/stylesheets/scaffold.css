@@ -1,22 +1,15 @@
-/* CSS RESET */
-
-* {
-  box-sizing: border-box;
-}
-
-li {
-  list-style-type: none;
-}
-
-a {
-  text-decoration: none;
-}
-
-a:visited {
-  text-decoration: none;
-}
 
 /* APP STYLING */
+
+ h1{
+  font-size: 20px;
+  padding-top: 2em;
+ }
+
+.logo{
+  display: block;
+  margin: 0 auto;
+}
 
 img {
   padding: 0.5em;
@@ -128,6 +121,13 @@ a:hover {
   }
 }
 
+.profile-pic {
+  height: 100px;
+  width: 100px;
+  border-radius: 50px;
+  display: block;
+}
+
 
 .search-field {
   padding-left: 0.5em;
@@ -174,7 +174,6 @@ div {
   align-self: center;
   justify-content: center;
   align-content: center;
-  clear: left;
   padding: 1.5em;
 }
 
@@ -182,8 +181,7 @@ div {
   width: 80vw;
   max-width: 960px;
   border-radius: 20em;
-  background: gray;
-  font-color: white;
+  background: black;
   display: flex;
   padding: 0.5em;
   flex-flow: row nowrap;
@@ -312,7 +310,7 @@ label {
 }
 
 .turbolinks-progress-bar {
-  background-color: lightblue;
+  background-color: purple;
 }
 
 .user-info {
