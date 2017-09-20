@@ -1,9 +1,9 @@
 module SpotifyRequestHelper
 
   # build a list of products from our Spotify API response
-  def parse_response
-    if @response
-      @response.each do |track|
+  def parse_response response
+    if response
+      response.each do |track|
         Product.create_with(name: track.name, artist: track.artists[0].name, image: track.album.images[0]['url']).find_or_create_by(spotify_id: track.id)
       end
     end

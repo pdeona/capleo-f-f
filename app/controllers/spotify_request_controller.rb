@@ -8,7 +8,7 @@ class SpotifyRequestController < ApplicationController
     if !(@current_user.nil?)
       query = params[:search]
       @response = RSpotify::Track.search(query)
-      parse_response
+      parse_response @response
       session[:search] = query
       redirect_to products_path
     else
