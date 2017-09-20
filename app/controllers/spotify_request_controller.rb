@@ -5,13 +5,14 @@ class SpotifyRequestController < ApplicationController
   # after_action :clean_up_db, only: :checkout
 
   def search
-    if !(@current_user.nil?)
+    unless @current_user.nil?
       query = params[:search]
       @response = RSpotify::Track.search(query)
       parse_response @response
       session[:search] = query
       redirect_to products_path
     else
+      flash[:danger] = 'Must be logged in to do that.'
       redirect_to login_path
     end
   end
