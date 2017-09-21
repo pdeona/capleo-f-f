@@ -5,7 +5,7 @@
         <li><%= image_tag product.image, size:'128x128' %></li>
       <% end %>
       <li>Song name:<br>
-        <% if product.name.size > 28 -%>
+        <% if product.name.split(" ").[](0).size > 28 -%>
           <% product.name.insert(13, '-') %>
         <% end -%>
         <%= product.name %></li>
