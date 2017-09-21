@@ -6,9 +6,9 @@ module ProductsHelper
     possible_products_one = Product.order(:name).where("name like ?", "%#{query}%")
     possible_products_two = Product.order(:name).where("artist like ?", "%#{query}%")
     # byebug
-    if possible_products_one.size == 0 && possible_products_two.size == 0
+    if (possible_products_one.size == 0 && possible_products_two.size == 0) or possible_products_one == possible_products_two
       flash[:danger] = "No songs matched your search. Try a song title or an artist's name."
-      Product.order(created_at: :asc).paginate(page: params[:page])
+      Product.order(created_at: :desc).paginate(page: params[:page])
     else
       if possible_products_one.size >= possible_products_two.size
         possible_products_one.paginate(page: params[:page])

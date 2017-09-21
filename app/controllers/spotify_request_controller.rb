@@ -22,12 +22,12 @@ class SpotifyRequestController < ApplicationController
   end
 
   def checkout
-    tracks = cart_cleanup @cart
     spotify_user = RSpotify::User.new(request.env['omniauth.auth'])
     playlist = make_playlist spotify_user, session[:list_name]
     session[:list_name] = nil
+    tracks = cart_cleanup @cart
     tracklist = build_tracklist tracks
-    unless tracklist.empty?
+    unless tracklist == nil
       add_songs tracklist, playlist
     end
     respond_to do |format|

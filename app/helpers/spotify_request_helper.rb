@@ -22,7 +22,7 @@ module SpotifyRequestHelper
   def build_tracklist track_array
     spotify_songs = []
     track_array.each do |track|
-      spotify_songs << RSpotify::Track.find(track)
+      spotify_songs << RSpotify::Track.find(track.spotify_id)
     end
     spotify_songs
   end
