@@ -25,3 +25,5 @@
 /yarn-error.log
 
 .byebug_history
+app/config/omniauth.rb
+app/application.rb
